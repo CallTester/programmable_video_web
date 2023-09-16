@@ -41,10 +41,12 @@ extension Interop on Room {
           RoomState.DISCONNECTED,
       mediaRegion: EnumToString.fromString<Region>(
         Region.values,
-        'gll',
+        'gll', //updated
+        //mediaRegion,  //it causes error
       ),
       localParticipant: localParticipant.toModel(),
-      remoteParticipants: iteratorToList<RemoteParticipantModel, RemoteParticipant>(
+      remoteParticipants:
+          iteratorToList<RemoteParticipantModel, RemoteParticipant>(
         participants.values(),
         (RemoteParticipant value) => value.toModel(),
       ),
